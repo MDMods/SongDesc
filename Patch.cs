@@ -13,16 +13,16 @@ namespace SongDesc
         private static void Postfix(MusicInfo selectedMusic, ref int selectedDifficulty, string __result)
         {
             Main.ChartName = VariableUtils.GetResult<string>(Singleton<DataManager>.instance["Account"]["SelectedMusicName"]);
-            Main.ChartLevel = VariableUtils.GetResult<int>(Singleton<DataManager>.instance["Account"]["SelectedMusicLevel"]);
+            Main.ChartLevel = VariableUtils.GetResult<string>(Singleton<DataManager>.instance["Account"]["SelectedMusicLevel"]);
             if (__result != null)
             {
                 if (__result.EndsWith("_map4"))
                 {
-                    Main.ChartLevel = Convert.ToInt32(selectedMusic.difficulty4);
+                    Main.ChartLevel = selectedMusic.difficulty4;
                 }
                 if (__result.EndsWith("_map5"))
                 {
-                    Main.ChartLevel = Convert.ToInt32(selectedMusic.difficulty5);
+                    Main.ChartLevel = selectedMusic.difficulty5;
                 }
             }
         }

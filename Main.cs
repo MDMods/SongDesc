@@ -11,7 +11,7 @@ namespace SongDesc
     {
         private static bool Set;
         internal static string ChartName;
-        internal static int ChartLevel;
+        internal static string ChartLevel;
         private static Font font { get; set; }
 
         public override void OnSceneWasLoaded(int buildIndex, string sceneName)
