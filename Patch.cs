@@ -3,6 +3,7 @@ using Assets.Scripts.PeroTools.Commons;
 using Assets.Scripts.PeroTools.Nice.Datas;
 using Assets.Scripts.PeroTools.Nice.Interface;
 using HarmonyLib;
+using MelonLoader;
 using System;
 
 namespace SongDesc
@@ -14,6 +15,8 @@ namespace SongDesc
         {
             Main.ChartName = VariableUtils.GetResult<string>(Singleton<DataManager>.instance["Account"]["SelectedMusicName"]);
             Main.ChartLevel = VariableUtils.GetResult<string>(Singleton<DataManager>.instance["Account"]["SelectedMusicLevel"]);
+            Main.MusicAuthor = selectedMusic.author;
+            MelonLogger.Msg(Main.MusicAuthor);
             if (__result != null)
             {
                 if (__result.EndsWith("_map4"))

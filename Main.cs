@@ -12,6 +12,7 @@ namespace SongDesc
         private static bool Set;
         internal static string ChartName;
         internal static string ChartLevel;
+        internal static string MusicAuthor;
         private static Font font { get; set; }
 
         public override void OnSceneWasLoaded(int buildIndex, string sceneName)
@@ -37,7 +38,7 @@ namespace SongDesc
             {
                 SetCanvas();
                 SetGameObject("ChartName", ChartName, 40, new Vector3(2.2f, 3.5f, 90f));
-                SetGameObject("ChartLevel", ChartLevel.ToString(), 30, new Vector3(2.1f, 3.15f, 90f));
+                SetGameObject("Author + Level", MusicAuthor + "  " + ChartLevel, 30, new Vector3(2.1f, 3.15f, 90f));
                 Set = true;
             }
         }
