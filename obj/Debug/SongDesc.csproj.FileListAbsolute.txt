@@ -1,0 +1,6 @@
+D:\C#\program\MD Mod\il2cpp\SongDesc\bin\Debug\SongDesc.dll
+D:\C#\program\MD Mod\il2cpp\SongDesc\bin\Debug\SongDesc.pdb
+D:\C#\program\MD Mod\il2cpp\SongDesc\obj\Debug\SongDesc.csproj.AssemblyReference.cache
+D:\C#\program\MD Mod\il2cpp\SongDesc\obj\Debug\SongDesc.csproj.CoreCompileInputs.cache
+D:\C#\program\MD Mod\il2cpp\SongDesc\obj\Debug\SongDesc.dll
+D:\C#\program\MD Mod\il2cpp\SongDesc\obj\Debug\SongDesc.pdb
