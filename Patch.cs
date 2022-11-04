@@ -16,17 +16,13 @@ namespace SongDesc
             Main.ChartName = VariableUtils.GetResult<string>(Singleton<DataManager>.instance["Account"]["SelectedMusicName"]);
             Main.ChartLevel = VariableUtils.GetResult<string>(Singleton<DataManager>.instance["Account"]["SelectedMusicLevel"]);
             Main.MusicAuthor = selectedMusic.author;
-            MelonLogger.Msg(Main.MusicAuthor);
-            if (__result != null)
+            if (selectedDifficulty == 4)
             {
-                if (__result.EndsWith("_map4"))
-                {
-                    Main.ChartLevel = selectedMusic.difficulty4;
-                }
-                if (__result.EndsWith("_map5"))
-                {
-                    Main.ChartLevel = selectedMusic.difficulty5;
-                }
+                Main.ChartLevel = selectedMusic.difficulty4;
+            }
+            if (selectedDifficulty == 5)
+            {
+                Main.ChartLevel = selectedMusic.difficulty5;
             }
         }
     }
