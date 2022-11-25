@@ -38,7 +38,7 @@ namespace SongDesc
             {
                 SetCanvas();
                 SetGameObject("ChartName", ChartName, 40, new Vector3(316.8f, 504f, 0f));
-                SetGameObject("Author + Level", MusicAuthor + "  " + ChartLevel, 30, new Vector3(302.4f, 453.6f, 0f));
+                SetGameObject("Author + Level", MusicAuthor + "  -  Lvl." + ChartLevel, 30, new Vector3(302.4f, 453.6f, 0f));
                 Set = true;
             }
         }

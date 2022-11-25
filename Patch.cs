@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Database;
+﻿using Assets.Scripts.Common;
+using Assets.Scripts.Database;
 using Assets.Scripts.PeroTools.Commons;
 using Assets.Scripts.PeroTools.Nice.Datas;
 using Assets.Scripts.PeroTools.Nice.Interface;
@@ -13,16 +14,29 @@ namespace SongDesc
     {
         private static void Postfix(MusicInfo selectedMusic, ref int selectedDifficulty, string __result)
         {
-            Main.ChartName = VariableUtils.GetResult<string>(Singleton<DataManager>.instance["Account"]["SelectedMusicName"]);
-            Main.ChartLevel = VariableUtils.GetResult<string>(Singleton<DataManager>.instance["Account"]["SelectedMusicLevel"]);
+            Main.ChartName = selectedMusic.name;
             Main.MusicAuthor = selectedMusic.author;
-            if (selectedDifficulty == 4)
+            switch (selectedDifficulty)
             {
-                Main.ChartLevel = selectedMusic.difficulty4;
-            }
-            if (selectedDifficulty == 5)
-            {
-                Main.ChartLevel = selectedMusic.difficulty5;
+                case 1:
+                    Main.ChartLevel = selectedMusic.difficulty1;
+                    break;
+
+                case 2:
+                    Main.ChartLevel = selectedMusic.difficulty2;
+                    break;
+
+                case 3:
+                    Main.ChartLevel = selectedMusic.difficulty3;
+                    break;
+
+                case 4:
+                    Main.ChartLevel = selectedMusic.difficulty4;
+                    break;
+
+                case 5:
+                    Main.ChartLevel = selectedMusic.difficulty5;
+                    break;
             }
         }
     }
