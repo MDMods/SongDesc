@@ -14,7 +14,6 @@ namespace SongDesc
     {
         private static void Postfix(MusicInfo selectedMusic, ref int selectedDifficulty, string __result)
         {
-            Main.ChartName = selectedMusic.name;
             Main.MusicAuthor = selectedMusic.author;
             switch (selectedDifficulty)
             {
@@ -38,6 +37,15 @@ namespace SongDesc
                     Main.ChartLevel = selectedMusic.difficulty5;
                     break;
             }
+        }
+    }
+
+    [HarmonyPatch(typeof(MusicInfo), "GetLocal")]
+    internal class GetLocalPatch
+    {
+        private static void Postfix(LocalALBUMInfo __result)
+        {
+            Main.ChartName = __result.name;
         }
     }
 }
