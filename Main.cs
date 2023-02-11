@@ -1,33 +1,28 @@
 ﻿using MelonLoader;
+using MuseDashMirror;
+using System;
 using UnityEngine;
 using static MuseDashMirror.BattleComponent;
-using static MuseDashMirror.UICreate;
+using static MuseDashMirror.UICreate.CanvasCreate;
+using static MuseDashMirror.UICreate.Fonts;
+using static MuseDashMirror.UICreate.TextGameObjectCreate;
 
 namespace SongDesc
 {
     public class Main : MelonMod
     {
-        private bool Set;
-
-        public override void OnSceneWasLoaded(int buildIndex, string sceneName)
+        public override void OnInitializeMelon()
         {
-            if (sceneName != "GameMain")
-            {
-                Set = false;
-                LoadFonts();
-            }
+            SceneInfo.EnterGameScene += new Action(LoadFonts);
+            GameStartEvent += new Action(CreateText);
         }
 
-        public override void OnUpdate()
+        private void CreateText()
         {
-            if (IsInGame && !Set)
-            {
-                CreateCanvas("Song Description Canvas", "Camera_2D", new Vector2(1920, 1080));
-                CreateTextGameObject("Song Description Canvas", "ChartName", ChartName, TextAnchor.UpperRight, true, new Vector3(316.8f, 504f, 0f), new Vector2(960, 60), 40);
-                CreateTextGameObject("Song Description Canvas", "Author + Level", MusicAuthor + "  -  Lvl." + ChartLevel, TextAnchor.UpperRight, true, new Vector3(302.4f, 453.6f, 0f), new Vector2(960, 60), 30);
-                UnloadFonts();
-                Set = true;
-            }
+            CreateCanvas("Song Description Canvas", "Camera_2D");
+            CreateTextGameObject("Song Description Canvas", "ChartName", ChartName, TextAnchor.UpperRight, true, new Vector3(316.8f, 504f, 0f), new Vector2(960, 60), 40);
+            CreateTextGameObject("Song Description Canvas", "Author + Level", MusicAuthor + "  -  Lvl." + ChartLevel, TextAnchor.UpperRight, true, new Vector3(302.4f, 453.6f, 0f), new Vector2(960, 60), 30);
+            UnloadFonts();
         }
     }
 }
