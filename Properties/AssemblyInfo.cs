@@ -1,7 +1,8 @@
-﻿using MelonLoader;
-using SongDesc;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Runtime.InteropServices;
+using MelonLoader;
+using SongDesc;
+using Main = SongDesc.Main;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
@@ -35,5 +36,5 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion(MelonBuildInfo.Version)]
 [assembly: AssemblyFileVersion(MelonBuildInfo.Version)]
-[assembly: MelonInfo(typeof(SongDesc.Main), MelonBuildInfo.Name, MelonBuildInfo.Version, MelonBuildInfo.Author)]
+[assembly: MelonInfo(typeof(Main), MelonBuildInfo.Name, MelonBuildInfo.Version, MelonBuildInfo.Author)]
 [assembly: MelonGame("PeroPeroGames", "MuseDash")]
