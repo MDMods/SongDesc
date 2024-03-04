@@ -1,15 +1,12 @@
-﻿namespace SongDesc
+namespace SongDesc;
+
+internal static class MelonBuildInfo
 {
-    internal static class MelonBuildInfo
-    {
-        public const string Name = "Song Desc";
+    internal const string Name = "SongDesc";
 
-        public const string Description = "Shows Song Descriptions in Game";
+    internal const string Description = "";
 
-        public const string Author = "lxy";
+    internal const string Author = "lxy";
 
-        public const string Company = null;
-
-        public const string Version = "1.1.0";
-    }
+    internal const string ModVersion = "2.0.1";
 }
