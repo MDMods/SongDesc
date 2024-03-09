@@ -53,7 +53,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="MuseDashMirror" Version="3.0.2"/>
+        <PackageReference Include="MuseDashMirror" Version="3.1.1"/>
     </ItemGroup>
 
     <Target Name="CopyMods" AfterTargets="Build">
